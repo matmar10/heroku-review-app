@@ -1,6 +1,10 @@
-name: Heroku Review Application
+name: Heroku Review App
 
 description: Create a Heroku review app when a PR is raised by someone with write or admin access
+
+branding:
+  icon: box
+  color: blue
 
 inputs:
   github_token:
