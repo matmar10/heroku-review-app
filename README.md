@@ -40,3 +40,6 @@ jobs:
 
 - [ ] Export info about the created build to be used later
 
+# Acknowledgments
+
+Thanks to [Michael Heap](https://github.com/mheap) for his [original rough implementation](https://github.com/mheap/github-action-pr-heroku-review-app) from which this version is inspired.
