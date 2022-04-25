@@ -1,6 +1,6 @@
 {
   "name": "github-action-heroku-review-app",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Automatically deploy a Heroku review app for each PR & ensure the review app stays up to date.",
   "author": "Matthew J Martin <matthew.mar10@gmail.com>",
   "license": "MIT",
