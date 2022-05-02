@@ -295,8 +295,8 @@ async function run() {
       core.debug('No label specified; will not label PR');
     }
 
+    core.startGroup('Comment on PR');
     if (shouldCommentPR) {
-      core.startGroup('Comment on PR');
       core.debug('Adding comment to PR...');
       await octokit.rest.issues.createComment({
         ...repo,
@@ -304,10 +304,10 @@ async function run() {
         body: `Review app deployed to ${updatedApp.app.web_url}`,
       });
       core.info('Added comment to PR... OK');
-      core.endGroup();
     } else {
-      core.debug('should_comment_pull_request is not set; will not comment on PR');
+      core.info('should_comment_pull_request is not set; will not comment on PR');
     }
+    core.endGroup();
   } catch (err) {
     core.error(err);
     core.setFailed(err.message);
