@@ -14,6 +14,10 @@ inputs:
     required: false
     description: Label to apply to PRs (or trigger builds when added to PR)
     default: ''
+  should_comment_pull_request:
+    required: false
+    description: Whether to comment on the PR
+    default: false
   heroku_api_token:
     required: true
     description: Heroku API token
