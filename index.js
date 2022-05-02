@@ -11,6 +11,10 @@ async function run() {
       required: false,
       default: 'Review App',
     });
+    const shouldCommentPR = core.getInput('should_comment_pull_request', {
+      required: false,
+      default: false,
+    });
     const herokuApiToken = core.getInput('heroku_api_token', {
       required: true,
     });
@@ -289,6 +293,20 @@ async function run() {
       core.endGroup();
     } else {
       core.debug('No label specified; will not label PR');
+    }
+
+    if (shouldCommentPR) {
+      core.startGroup('Comment on PR');
+      core.debug('Adding comment to PR...');
+      await octokit.rest.issues.createComment({
+        ...repo,
+        issue_number: prNumber,
+        body: `Review app deployed to ${updatedApp.app.web_url}`,
+      });
+      core.info('Added comment to PR... OK');
+      core.endGroup();
+    } else {
+      core.debug('should_comment_pull_request is not set; will not comment on PR');
     }
   } catch (err) {
     core.error(err);

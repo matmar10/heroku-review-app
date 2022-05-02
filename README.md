@@ -23,6 +23,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           github_label: Review App
+          should_comment_pull_request: true
           heroku_api_token: ${{ secrets.HEROKU_API_TOKEN }}
           heroku_pipeline_id: b3db2bf0-081c-49a5-afa8-4f6a2443ad75
 ```
@@ -33,6 +34,7 @@ jobs:
 
 - **github_token** - Github API access token; needs scope to add label to issue
 - **github_label** - Text of what label should be added to each PR. If this label is added, it triggers a new build
+- **should_comment_pull_request** - If true, a comment will be added to the PR when the review app is deployed
 - **heroku_api_token** - Heroku API Token; generate this under your personal settings in Heroku
 - **heroku_pipeline_id** - Pipeline ID configured to use review apps. You can get this from the URL in your browser.
 
