@@ -1378,7 +1378,7 @@ const Heroku = __webpack_require__(105);
 const core = __webpack_require__(470);
 const github = __webpack_require__(469);
 
-const VALID_EVENT = 'pull_request';
+const VALID_EVENT = ['pull_request', 'pull_request_review'];
 
 async function run() {
   try {
@@ -1429,7 +1429,7 @@ async function run() {
       owner: repoOwner,
     } = repo;
 
-    if (eventName !== VALID_EVENT) {
+    if (!VALID_EVENT.includes(eventName)) {
       throw new Error(`Unexpected github event trigger: ${eventName}`);
     }
 
