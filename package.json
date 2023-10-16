@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^4.2.2",
-    "@zeit/ncc": "^0.22.3",
+    "@vercel/ncc": "^0.38.0",
     "dotenv": "^16.0.0",
     "eslint": "^8.12.0",
     "eslint-plugin-es-beautifier": "^1.0.1",
