@@ -26,5 +26,5 @@ inputs:
     description: The UUID of your herkou pipeline to create review app within
 
 runs:
-  using: node12
+  using: node16
   main: dist/index.js
